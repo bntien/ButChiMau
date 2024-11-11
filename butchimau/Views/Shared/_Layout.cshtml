@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - butchimau</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/butchimau.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+</head>
+<body>
+    <header>
+        <nav id="navnho1" style="height:30px">
+            <div class="mxh" >					
+							<a href="https://www.facebook.com/tien.buingoc.3110"  class="mxhicon"><i class="fa-brands fa-facebook"aria-hidden="true"></i></a>													
+							<a href="https://www.instagram.com/"  class="mxhicon"><i class="fa-brands fa-instagram"aria-hidden="true"></i></a>
+							<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"  class="mxhicon"><i class="fa-brands fa-youtube"aria-hidden="true"></i></a>
+                            <a id="txtchaomung">Chào mừng bạn đến với Bút chì màu</a>
+                            <div class="mxhicon mxhicon-right" style="color: #fff;">
+                            <a href="" id ="iconheart" style="color: #fff;"><i class="fa-solid fa-phone"></i>0899749298</a>
+                            <a href="" style="color: #fff;"><i class="fa-regular fa-envelope"></i>otttien@gmail.com</a>
+                            </div>
+			</div>                    
+        </nav>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3" style="height: 120px;  font-weight: bold;">
+
+
+           
+            <div class="container-fluid cachle40px">
+                <form asp-controller="Home" asp-action="Search" method="get" id="search-form">
+                    <input type="text" name="query" placeholder="Tìm kiếm..." id="search-input"  />
+                </form>
+                <button type="submit" id="search-button" class="btn btn-outline-primary">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+
+                <a href="Home" class="anhlogo1">
+                    <img src="~/img/logo2.jpg" alt="Logo" class="img-fluid" style="width: 70px; height: auto;" />
+                </a>
+
+
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" id="btndangnhap" asp-area="" 
+                        asp-controller="Home" asp-action="Index">Đăng nhập</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" id="btndangki" asp-area="" 
+                        asp-controller="Home" asp-action="Privacy">Đăng ký</a>
+                    </li>
+                </ul> 
+
+                <div class="icon-container">
+                    <div class="heart-container">
+                        <i class="fa-regular fa-heart heart-icon"></i>
+                        <span class="hd-cart-count">1</span>
+                    </div>
+
+                    <div class="bag-container">
+                        <i class="fa-solid fa-bag-shopping bag-icon"></i>
+                        <span class="hd-cart-count">5</span>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted" style="margin-top: 20px;">
+<div class="container">
+    &copy; Nhà sách bút chì màu - Tổng giám đốc: <a asp-area="" asp-controller="Home" asp-action="Privacy">Bùi Ngọc Tiến</a>
+    &copy; Địa chỉ <a asp-area="" asp-controller="Home" asp-action="Privacy">Thái Phương-Hưng Hà -Thái Bình</a>
+</div>
+
+
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
